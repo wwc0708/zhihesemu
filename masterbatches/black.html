@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>黑色母 - 志和色母</title>
+  <link rel="stylesheet" href="../assets/css/style.css" />
+</head>
+<body>
+  <header>
+  <div class="container">
+    <h1><img src="assets/images/logo-placeholder.png" alt="志和色母" width="180"></h1>
+    
+    <!-- 汉堡按钮（仅手机显示） -->
+    <button class="mobile-menu-btn" id="menuToggle">☰</button>
+
+    <!-- 桌面导航（大屏显示） -->
+    <nav class="desktop-nav">
+      <a href="index.html">首页</a>
+      <div class="dropdown">
+        <a href="#">行业应用 ▼</a>
+        <div class="dropdown-content">
+          <a href="industries/automotive.html">汽车行业</a>
+          <a href="#">包装行业</a>
+          <a href="#">日用品行业</a>
+          <a href="#">电子电器</a>
+          <a href="#">建材行业</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">色母产品 ▼</a>
+        <div class="dropdown-content">
+          <a href="masterbatches/black.html">黑色母</a>
+          <a href="#">白色母</a>
+          <a href="#">彩色母</a>
+          <a href="#">填充母粒</a>
+          <a href="#">功能母粒</a>
+        </div>
+      </div>
+      <a href="#">联系我们</a>
+    </nav>
+
+    <!-- 手机导航（默认隐藏） -->
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="index.html">首页</a>
+      
+      <button class="mobile-dropdown-btn">行业应用 ▼</button>
+      <div class="mobile-dropdown-content">
+        <a href="industries/automotive.html">汽车行业</a>
+        <a href="#">包装行业</a>
+        <a href="#">日用品行业</a>
+        <a href="#">电子电器</a>
+        <a href="#">建材行业</a>
+      </div>
+      
+      <button class="mobile-dropdown-btn">色母产品 ▼</button>
+      <div class="mobile-dropdown-content">
+        <a href="masterbatches/black.html">黑色母</a>
+        <a href="#">白色母</a>
+        <a href="#">彩色母</a>
+        <a href="#">填充母粒</a>
+        <a href="#">功能母粒</a>
+      </div>
+      
+      <a href="#">联系我们</a>
+    </nav>
+  </div>
+</header>
+
+  <main class="container">
+    <h2>高性能黑色母</h2>
+
+    <section class="product-intro">
+      <img src="https://via.placeholder.com/500x300?text=黑色母实拍" alt="黑色母" style="float:right; margin:0 0 20px 20px;">
+      <p>志和黑色母采用高纯度炭黑（如Printex L6、Monarch 1300等），配合优质载体树脂（PP/PE/ABS/PA等），经双螺杆挤出造粒，具有以下优势：</p>
+      <ul>
+        <li>✅ 高黑度、高光泽</li>
+        <li>✅ 优异分散性，无黑点、无条纹</li>
+        <li>✅ 耐高温（最高适用320℃）</li>
+        <li>✅ 耐候性强（可选抗UV配方）</li>
+        <li>✅ 环保无毒，符合RoHS、REACH标准</li>
+      </ul>
+      <div style="clear:both;"></div>
+    </section>
+
+    <section>
+      <h3>典型应用行业</h3>
+      <table class="app-table">
+        <tr><th>行业</th><th>应用场景</th><th>推荐型号</th></tr>
+        <tr><td>汽车行业</td><td>保险杠、门板、轮毂盖</td><td>ZH-BK801（耐候型）</td></tr>
+        <tr><td>包装行业</td><td>垃圾袋、工业膜</td><td>ZH-BK600（高浓度）</td></tr>
+        <tr><td>日用品</td><td>收纳箱、垃圾桶</td><td>ZH-BK500（经济型）</td></tr>
+        <tr><td>电子电器</td><td>电源外壳、插头</td><td>ZH-BK900（高黑高光）</td></tr>
+      </table>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 东莞市志和色母科技有限公司</p>
+      <p>地址：广东省东莞市桥头镇石水口银湖二路17号 | 电话：15818308513</p>
+    </div>
+  </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuBtn = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const dropdownBtns = document.querySelectorAll('.mobile-dropdown-btn');
+
+    if (menuBtn && mobileNav) {
+      menuBtn.addEventListener('click', function () {
+        mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+      });
+    }
+
+    dropdownBtns.forEach(btn => {
+      btn.addEventListener('click', function () {
+        const content = this.nextElementSibling;
+        content.classList.toggle('show');
+        this.textContent = this.textContent.includes('▼') 
+          ? this.textContent.replace('▼', '▲') 
+          : this.textContent.replace('▲', '▼');
+      });
+    });
+  });
+</script>
+</body>
+</html>

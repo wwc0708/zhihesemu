@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>志和色母 · 行业解决方案</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+ <header>
+  <div class="container">
+    <h1><img src="assets/images/logo-placeholder.png" alt="志和色母" width="180"></h1>
+    
+    <!-- 汉堡按钮（仅手机显示） -->
+    <button class="mobile-menu-btn" id="menuToggle">☰</button>
+
+    <!-- 桌面导航（大屏显示） -->
+    <nav class="desktop-nav">
+      <a href="index.html">首页</a>
+      <div class="dropdown">
+        <a href="#">行业应用 ▼</a>
+        <div class="dropdown-content">
+          <a href="industries/automotive.html">汽车行业</a>
+          <a href="#">包装行业</a>
+          <a href="#">日用品行业</a>
+          <a href="#">电子电器</a>
+          <a href="#">建材行业</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="#">色母产品 ▼</a>
+        <div class="dropdown-content">
+          <a href="masterbatches/black.html">黑色母</a>
+          <a href="#">白色母</a>
+          <a href="#">彩色母</a>
+          <a href="#">填充母粒</a>
+          <a href="#">功能母粒</a>
+        </div>
+      </div>
+      <a href="#">联系我们</a>
+    </nav>
+
+    <!-- 手机导航（默认隐藏） -->
+    <nav class="mobile-nav" id="mobileNav">
+      <a href="index.html">首页</a>
+      
+      <button class="mobile-dropdown-btn">行业应用 ▼</button>
+      <div class="mobile-dropdown-content">
+        <a href="industries/automotive.html">汽车行业</a>
+        <a href="#">包装行业</a>
+        <a href="#">日用品行业</a>
+        <a href="#">电子电器</a>
+        <a href="#">建材行业</a>
+      </div>
+      
+      <button class="mobile-dropdown-btn">色母产品 ▼</button>
+      <div class="mobile-dropdown-content">
+        <a href="masterbatches/black.html">黑色母</a>
+        <a href="#">白色母</a>
+        <a href="#">彩色母</a>
+        <a href="#">填充母粒</a>
+        <a href="#">功能母粒</a>
+      </div>
+      
+      <a href="#">联系我们</a>
+    </nav>
+  </div>
+</header>
+
+  <main class="container">
+    <section class="hero">
+      <h2>志和色母科技 — 专注色母粒20年</h2>
+      <p>为全球塑料制品提供高性能、环保、定制化色母解决方案</p>
+    </section>
+
+    <section class="industry-grid">
+      <div class="card">
+        <img src="https://via.placeholder.com/600x400?text=汽车内饰" alt="汽车行业">
+        <h3>🚗 汽车行业</h3>
+        <p>耐高温、抗UV、低气味，满足严苛车规标准。</p>
+        <a href="industries/automotive.html">查看详情 →</a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/600x400?text=食品包装" alt="包装行业">
+        <h3>📦 包装行业</h3>
+        <p>食品级安全、高白度、高遮盖力。</p>
+        <a href="#">查看详情 →</a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/600x400?text=日用品" alt="日用品">
+        <h3>🧴 日用品行业</h3>
+        <p>色彩鲜艳、无毒环保、成本优化。</p>
+        <a href="#">查看详情 →</a>
+      </div>
+      <div class="card">
+        <img src="https://via.placeholder.com/600x400?text=电子外壳" alt="电子电器">
+        <h3>🔌 电子电器</h3>
+        <p>阻燃、抗静电、高光泽表面。</p>
+        <a href="#">查看详情 →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 东莞市志和色母科技有限公司</p>
+      <p>地址：广东省东莞市桥头镇石水口银湖二路17号 | 电话：15818308513</p>
+    </div>
+  </footer>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const menuBtn = document.getElementById('menuToggle');
+    const mobileNav = document.getElementById('mobileNav');
+    const dropdownBtns = document.querySelectorAll('.mobile-dropdown-btn');
+
+    if (menuBtn && mobileNav) {
+      menuBtn.addEventListener('click', function () {
+        mobileNav.style.display = mobileNav.style.display === 'flex' ? 'none' : 'flex';
+      });
+    }
+
+    dropdownBtns.forEach(btn => {
+      btn.addEventListener('click', function () {
+        const content = this.nextElementSibling;
+        content.classList.toggle('show');
+        this.textContent = this.textContent.includes('▼') 
+          ? this.textContent.replace('▼', '▲') 
+          : this.textContent.replace('▲', '▼');
+      });
+    });
+  });
+</script>
+</body>
+</html>
