@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<!-- saved from url=(0094)file:///C:/Users/24425/Downloads/%E5%8D%83%E9%97%AE%E4%BB%A3%E7%A0%81_html_20260119%20(1).html -->
+<html lang="zh-CN"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>中恒新材料 - 专业色母粒制造商</title>
+    <style>
+        /* 全局重置与基础样式 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9fafb;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* 头部导航栏 */
+        .header {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 1rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        /* 移动端菜单按钮 */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            border-radius: 2px;
+        }
+
+        /* 导航菜单 */
+        .nav-menu {
+            display: flex;
+            gap: 1.2rem;
+        }
+
+        .nav-item {
+            position: relative;
+            padding: 0.5rem 0;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 180px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border-radius: 8px;
+            display: none;
+            z-index: 1000;
+            padding: 0.5rem 0;
+        }
+
+        .dropdown.show {
+            display: block;
+        }
+
+        .dropdown-item {
+            padding: 0.75rem 1rem;
+            color: #333;
+            display: block;
+            transition: background-color 0.2s;
+        }
+
+        .dropdown-item:hover,
+        .dropdown-item:focus {
+            background-color: #f0f4ff;
+            color: #1e3c72;
+        }
+
+        /* 主体内容区域 */
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem 1rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 1.5rem 0;
+        }
+
+        .hero-section h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-section p {
+            font-size: 1rem;
+            opacity: 0.95;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #1e3c72;
+            margin: 1.5rem 0 1rem;
+            font-size: 1.5rem;
+        }
+
+        /* 行业卡片网格 */
+        .industry-grid,
+        .color-masters-grid {
+            display: grid;
+            gap: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .industry-card,
+        .color-master-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .industry-card:hover,
+        .color-master-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.12);
+        }
+
+        .card-image {
+            width: 100%;
+            height: 150px;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .card-content {
+            padding: 1.2rem;
+        }
+
+        .card-content h3,
+        .color-master-card h4 {
+            color: #1e3c72;
+            margin-bottom: 0.6rem;
+            font-size: 1.1rem;
+        }
+
+        .color-master-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin: 0 auto 0.8rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .black-master { background: linear-gradient(45deg, #2c3e50, #34495e); }
+        .white-master { background: linear-gradient(45deg, #ecf0f1, #bdc3c7); color: #2c3e50; }
+        .color-master { background: linear-gradient(45deg, #e74c3c, #e67e22); }
+        .fill-master { background: linear-gradient(45deg, #3498db, #2980b9); }
+        .function-master { background: linear-gradient(45deg, #9b59b6, #8e44ad); }
+
+        /* 返回按钮 */
+        .back-button {
+            background: #1e3c72;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 8px;
+            font-size: 1rem;
+            cursor: pointer;
+            display: inline-block;
+            margin-bottom: 1rem;
+            transition: background 0.2s;
+        }
+
+        .back-button:hover {
+            background: #162d50;
+        }
+
+        /* 内容切换控制 */
+        .active-industry {
+            display: none;
+        }
+
+        .active-industry.show {
+            display: block;
+        }
+
+        /* 响应式断点：手机优先 */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                top: 60px;
+                left: 0;
+                right: 0;
+                background: white;
+                flex-direction: column;
+                padding: 1rem 0;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+                z-index: 999;
+            }
+
+            .nav-menu.active {
+                transform: translateY(0);
+            }
+
+            .nav-item {
+                padding: 0.8rem 1.5rem;
+                border-bottom: 1px solid #eee;
+                color: #1e3c72;
+                font-weight: 500;
+            }
+
+            .nav-item:last-child {
+                border-bottom: none;
+            }
+
+            /* 手机端下拉菜单改为展开式 */
+            .dropdown {
+                position: static;
+                box-shadow: none;
+                border-radius: 0;
+                background: #f8f9fa;
+                padding: 0.5rem 0 0.5rem 2rem;
+                display: none;
+                animation: slideDown 0.2s ease;
+            }
+
+            .dropdown.show {
+                display: block;
+            }
+
+            @keyframes slideDown {
+                from { opacity: 0; max-height: 0; }
+                to { opacity: 1; max-height: 200px; }
+            }
+
+            /* 卡片布局单列 */
+            .industry-grid,
+            .color-masters-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-section {
+                padding: 1.5rem 1rem;
+            }
+
+            .hero-section h1 {
+                font-size: 1.5rem;
+            }
+
+            .section-title {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* 平板优化 */
+        @media (min-width: 769px) and (max-width: 1024px) {
+            .industry-grid,
+            .color-masters-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* 桌面端 */
+        @media (min-width: 1025px) {
+            .industry-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .color-masters-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 头部导航 -->
+    <header class="header">
+        <div class="header-content container">
+            <div class="logo">志和色母</div>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="nav-menu" id="navMenu">
+                <div class="nav-item" onclick="toggleSubmenu(&#39;auto&#39;)">
+                    汽车行业
+                    <div class="dropdown" id="auto-submenu">
+                        <a href="file:///C:/Users/24425/Downloads/%E5%8D%83%E9%97%AE%E4%BB%A3%E7%A0%81_html_20260119%20(1).html#" class="dropdown-item" onclick="showIndustry(&#39;auto&#39;); event.stopPropagation();">汽车内饰</a>
+                        <a href="file:///C:/Users/24425/Downloads/%E5%8D%83%E9%97%AE%E4%BB%A3%E7%A0%81_html_20260119%20(1).html#" class="dropdown-item" onclick="showIndustry(&#39;auto&#39;); event.stopPropagation();">汽车外饰</a>
+                        <a href="file:///C:/Users/24425/Downloads/%E5%8D%83%E9%97%AE%E4%BB%A3%E7%A0%81_html_20260119%20(1).html#" class="dropdown-item" onclick="showIndustry(&#39;auto&#39;); event.stopPropagation();">汽车零部件</a>
+                    </div>
+                </div>
+                <div class="nav-item" onclick="toggleSubmenu(&#39;packaging&#39;)">
+                    包装行业
+                    <div class="dropdown" id="packaging-submenu">
+                        <a href="file:///C:/Users/24425/Downloads/%E5%8D%83%E9%97%AE%E4%BB%A3%E7%A0%81_html_20260119%20(1).html#" class="dropdown-item" onclick="showIndustry(&#39;packaging&#39;); event.stopPropagation();">食品包装</a>
+                        <a href="file:///C:/Users/24425/Downloads/%E5%8D%83%E9%97%AE%E4%BB%A3%E7%A0%81_html_20260119%20(1).html#" class="dropdown-item" onclick="showIndustry(&#39;packaging&#39;); event.stopPropagation();">药品包装</a>
+                        <a href="file:///C:/Users/24425/Downloads/%E5%8D%83%E9%97%AE%E4%BB%A3%E7%A0%81_html_20260119%20(1).html#" class="dropdown-item" onclick="showIndustry(&#39;packaging&#39;); event.stopPropagation();">日化包装</a>
+                    </div>
+                </div>
+                <div class="nav-item" onclick="toggleSubmenu(&#39;daily&#39;)">
+                    日用品行业
+                    <div class="dropdown" id="daily-submenu">
+                        <a href="file:///C:/Users/24425/Downloads/%E5%8D%83%E9%97%AE%E4%BB%A3%E7%A0%81_html_20260119%20(1).html#" class="dropdown-item" onclick="showIndustry(&#39;daily&#39;); event.stopPropagation();">家居用品</a>
+                        <a href="file:///C:/Users/24425/Downloads/%E5%8D%83%E9%97%AE%E4%BB%A3%E7%A0%81_html_20260119%20(1).html#" class="dropdown-item" onclick="showIndustry(&#39;daily&#39;); event.stopPropagation();">个人护理</a>
+                        <a href="file:///C:/Users/24425/Downloads/%E5%8D%83%E9%97%AE%E4%BB%A3%E7%A0%81_html_20260119%20(1).html#" class="dropdown-item" onclick="showIndustry(&#39;daily&#39;); event.stopPropagation();">玩具制品</a>
+                    </div>
+                </div>
+                <div class="nav-item" onclick="toggleSubmenu(&#39;master&#39;)">
+                    色母系列
+                    <div class="dropdown" id="master-submenu">
+                        <a href="file:///C:/Users/24425/Downloads/%E5%8D%83%E9%97%AE%E4%BB%A3%E7%A0%81_html_20260119%20(1).html#" class="dropdown-item" onclick="showMasterType(); event.stopPropagation();">黑色母</a>
+                        <a href="file:///C:/Users/24425/Downloads/%E5%8D%83%E9%97%AE%E4%BB%A3%E7%A0%81_html_20260119%20(1).html#" class="dropdown-item" onclick="showMasterType(); event.stopPropagation();">白色母</a>
+                        <a href="file:///C:/Users/24425/Downloads/%E5%8D%83%E9%97%AE%E4%BB%A3%E7%A0%81_html_20260119%20(1).html#" class="dropdown-item" onclick="showMasterType(); event.stopPropagation();">彩色母</a>
+                        <a href="file:///C:/Users/24425/Downloads/%E5%8D%83%E9%97%AE%E4%BB%A3%E7%A0%81_html_20260119%20(1).html#" class="dropdown-item" onclick="showMasterType(); event.stopPropagation();">填充色母</a>
+                        <a href="file:///C:/Users/24425/Downloads/%E5%8D%83%E9%97%AE%E4%BB%A3%E7%A0%81_html_20260119%20(1).html#" class="dropdown-item" onclick="showMasterType(); event.stopPropagation();">功能色母</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- 首页横幅 -->
+        <section class="hero-section">
+            <h1>专业色母粒解决方案提供商</h1>
+            <p>为各行业提供高品质、环保型色母粒产品</p>
+        </section>
+
+        <!-- 行业总览（默认显示） -->
+        <div id="industry-overview" style="display: block;">
+            <h2 class="section-title">行业应用解决方案</h2>
+            <div class="industry-grid">
+                <div class="industry-card" onclick="showIndustry(&#39;auto&#39;)">
+                    <div class="card-image" style="background: linear-gradient(45deg, #ff6b6b, #ee5a24);"></div>
+                    <div class="card-content">
+                        <h3>汽车行业</h3>
+                        <p>为汽车内外饰件提供专业配色方案，满足严格的耐候性和安全性要求。</p>
+                    </div>
+                </div>
+                <div class="industry-card" onclick="showIndustry(&#39;packaging&#39;)">
+                    <div class="card-image" style="background: linear-gradient(45deg, #4ecdc4, #44bd32);"></div>
+                    <div class="card-content">
+                        <h3>包装行业</h3>
+                        <p>食品级安全色母，为各类包装材料提供鲜艳持久的色彩表现。</p>
+                    </div>
+                </div>
+                <div class="industry-card" onclick="showIndustry(&#39;daily&#39;)">
+                    <div class="card-image" style="background: linear-gradient(45deg, #a55eea, #2bcbba);"></div>
+                    <div class="card-content">
+                        <h3>日用品行业</h3>
+                        <p>环保无毒配方，适用于各类日用品的着色需求。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 行业详情页（隐藏） -->
+        <div id="auto-details" class="active-industry">
+            <button class="back-button" onclick="showOverview()">← 返回首页</button>
+            <h2 class="section-title">汽车行业色母解决方案</h2>
+            <div class="card-content">
+                <h3>汽车内外饰专用色母</h3>
+                <p>我们的汽车级色母粒专为满足汽车行业的严格标准而设计，具有优异的耐光性、耐热性和耐化学腐蚀性能。</p>
+                <h4 style="margin: 1rem 0; color: #1e3c72;">主要应用领域：</h4>
+                <ul style="padding-left: 1.5rem; margin-bottom: 1rem;">
+                    <li>汽车仪表板、门板等内饰件</li>
+                    <li>保险杠、后视镜等外饰件</li>
+                    <li>发动机舱内零部件</li>
+                    <li>车灯外壳及装饰件</li>
+                </ul>
+                <h4 style="margin: 1rem 0; color: #1e3c72;">推荐色母类型：</h4>
+                <div class="color-masters-grid">
+                    <div class="color-master-card">
+                        <div class="color-master-icon black-master">⚫</div>
+                        <h4>黑色母</h4>
+                        <p>高遮盖力，抗紫外线</p>
+                    </div>
+                    <div class="color-master-card">
+                        <div class="color-master-icon white-master" style="color:#2c3e50">⚪</div>
+                        <h4>白色母</h4>
+                        <p>高光泽，耐候性强</p>
+                    </div>
+                    <div class="color-master-card">
+                        <div class="color-master-icon color-master">🎨</div>
+                        <h4>彩色母</h4>
+                        <p>定制化色彩方案</p>
+                    </div>
+                    <div class="color-master-card">
+                        <div class="color-master-icon function-master">⚙️</div>
+                        <h4>功能色母</h4>
+                        <p>阻燃、抗静电等</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="packaging-details" class="active-industry">
+            <button class="back-button" onclick="showOverview()">← 返回首页</button>
+            <h2 class="section-title">包装行业色母解决方案</h2>
+            <div class="card-content">
+                <h3>食品级包装专用色母</h3>
+                <p>符合食品接触安全标准，确保包装材料的安全性和美观性。</p>
+                <h4 style="margin: 1rem 0; color: #1e3c72;">主要应用领域：</h4>
+                <ul style="padding-left: 1.5rem; margin-bottom: 1rem;">
+                    <li>食品包装袋、盒</li>
+                    <li>药品包装材料</li>
+                    <li>化妆品包装容器</li>
+                    <li>日用品外包装</li>
+                </ul>
+                <h4 style="margin: 1rem 0; color: #1e3c72;">推荐色母类型：</h4>
+                <div class="color-masters-grid">
+                    <div class="color-master-card">
+                        <div class="color-master-icon white-master" style="color:#2c3e50">⚪</div>
+                        <h4>白色母</h4>
+                        <p>遮光性好，印刷适性佳</p>
+                    </div>
+                    <div class="color-master-card">
+                        <div class="color-master-icon color-master">🎨</div>
+                        <h4>彩色母</h4>
+                        <p>提升视觉吸引力</p>
+                    </div>
+                    <div class="color-master-card">
+                        <div class="color-master-icon fill-master">📦</div>
+                        <h4>填充色母</h4>
+                        <p>降低成本，增强性能</p>
+                    </div>
+                    <div class="color-master-card">
+                        <div class="color-master-icon function-master">🛡️</div>
+                        <h4>功能色母</h4>
+                        <p>防潮、阻隔等功能</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="daily-details" class="active-industry">
+            <button class="back-button" onclick="showOverview()">← 返回首页</button>
+            <h2 class="section-title">日用品行业色母解决方案</h2>
+            <div class="card-content">
+                <h3>环保安全日用品色母</h3>
+                <p>符合国际环保标准，安全无毒，适用于儿童用品等敏感场景。</p>
+                <h4 style="margin: 1rem 0; color: #1e3c72;">主要应用领域：</h4>
+                <ul style="padding-left: 1.5rem; margin-bottom: 1rem;">
+                    <li>家居塑料制品</li>
+                    <li>个人护理用品容器</li>
+                    <li>儿童玩具</li>
+                    <li>厨房用品</li>
+                </ul>
+                <h4 style="margin: 1rem 0; color: #1e3c72;">推荐色母类型：</h4>
+                <div class="color-masters-grid">
+                    <div class="color-master-card">
+                        <div class="color-master-icon color-master">🎨</div>
+                        <h4>彩色母</h4>
+                        <p>丰富色彩选择</p>
+                    </div>
+                    <div class="color-master-card">
+                        <div class="color-master-icon white-master" style="color:#2c3e50">⚪</div>
+                        <h4>白色母</h4>
+                        <p>纯净基础色调</p>
+                    </div>
+                    <div class="color-master-card">
+                        <div class="color-master-icon function-master">🌿</div>
+                        <h4>功能色母</h4>
+                        <p>抗菌、防霉特性</p>
+                    </div>
+                    <div class="color-master-card">
+                        <div class="color-master-icon fill-master">🧩</div>
+                        <h4>填充色母</h4>
+                        <p>优化成本与耐用性</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 色母类型总览 -->
+        <div id="master-overview" class="active-industry">
+            <button class="back-button" onclick="showOverview()">← 返回首页</button>
+            <h2 class="section-title">色母系列产品介绍</h2>
+            <div class="color-masters-grid">
+                <div class="color-master-card">
+                    <div class="color-master-icon black-master">⚫</div>
+                    <h4>黑色母</h4>
+                    <p>高遮盖力，抗紫外线，适用于各种基材。</p>
+                </div>
+                <div class="color-master-card">
+                    <div class="color-master-icon white-master" style="color:#2c3e50">⚪</div>
+                    <h4>白色母</h4>
+                    <p>高亮度，分散性好，可用于食品级应用。</p>
+                </div>
+                <div class="color-master-card">
+                    <div class="color-master-icon color-master">🎨</div>
+                    <h4>彩色母</h4>
+                    <p>色彩稳定持久，支持客户定制。</p>
+                </div>
+                <div class="color-master-card">
+                    <div class="color-master-icon fill-master">📊</div>
+                    <h4>填充色母</h4>
+                    <p>降低成本，改善物理性能，提高竞争力。</p>
+                </div>
+                <div class="color-master-card">
+                    <div class="color-master-icon function-master">⚙️</div>
+                    <h4>功能色母</h4>
+                    <p>具备阻燃、抗静电、抗菌等多种功能。</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // 移动端菜单切换
+        document.getElementById('menuToggle').addEventListener('click', function () {
+            const nav = document.getElementById('navMenu');
+            nav.classList.toggle('active');
+        });
+
+        // 手机端子菜单展开/收起
+        function toggleSubmenu(type) {
+            if (window.innerWidth <= 768) {
+                const submenu = document.getElementById(`${type}-submenu`);
+                submenu.classList.toggle('show');
+            }
+        }
+
+        // 显示行业详情
+        function showIndustry(industry) {
+            document.querySelectorAll('.active-industry').forEach(el => el.classList.remove('show'));
+            document.getElementById(`${industry}-details`).classList.add('show');
+            document.getElementById('industry-overview').style.display = 'none';
+            closeMobileMenu();
+        }
+
+        // 显示色母总览
+        function showMasterType() {
+            document.querySelectorAll('.active-industry').forEach(el => el.classList.remove('show'));
+            document.getElementById('master-overview').classList.add('show');
+            document.getElementById('industry-overview').style.display = 'none';
+            closeMobileMenu();
+        }
+
+        // 返回首页
+        function showOverview() {
+            document.getElementById('industry-overview').style.display = 'block';
+            document.querySelectorAll('.active-industry').forEach(el => el.classList.remove('show'));
+            closeMobileMenu();
+        }
+
+        // 关闭移动端菜单
+        function closeMobileMenu() {
+            if (window.innerWidth <= 768) {
+                document.getElementById('navMenu').classList.remove('active');
+                // 收起所有子菜单
+                document.querySelectorAll('.dropdown').forEach(el => el.classList.remove('show'));
+            }
+        }
+
+        // 初始化
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('industry-overview').style.display = 'block';
+        });
+
+        // 点击导航项时关闭菜单（移动端）
+        document.querySelectorAll('.nav-item, .dropdown-item').forEach(item => {
+            item.addEventListener('click', closeMobileMenu);
+        });
+    </script>
+
+</body></html>
